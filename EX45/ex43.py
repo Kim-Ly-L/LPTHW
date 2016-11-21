@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 from sys import exit
 from random import randint
 
@@ -131,7 +132,7 @@ class TheBridge(Scene):
         if action == "throw the bomb":
             print "In a panic you throw the bomb at the group of Gothons"
             print "and make a leap for the door. Right as you drop it a"
-            print "Gothon shoots you right in the back killing you.""
+            print "Gothon shoots you right in the back killing you."
             print "As you die you see another Gothon frantically try to disarm"
             print "the bomb. You die knowing they will probably blow up when"
             print "it goes off."
@@ -139,9 +140,9 @@ class TheBridge(Scene):
 
         elif action == "slowly place the bomb":
             print "You point your blaster at the bomb under your arm"
-            print "and the Gothons put their hands up and start to sweat.""
+            print "and the Gothons put their hands up and start to sweat."
             print "You inch backward to the door, open it, and then carefully"
-            print "place the bomb on the floor, pointing your blaster at it.""
+            print "place the bomb on the floor, pointing your blaster at it."
             print "You then jump back through the door, punch the close button"
             print "and blast the lock so the Gothons can’t get out."
             print "Now that the bomb is placed you run to the escape pod to"
@@ -206,8 +207,9 @@ class Map(object):
         return val
 
     def opening_scene(self):
-        return self.next_scene(self.start_scene)
+        return self.next_scene('central_corridor')
 
-a_map = Map('central_corridor')
-a_game = Engine(a_map)
-a_game.play()
+if __name__ == "__main__":
+    a_map = Map('central_corridor')
+    a_game = Engine(a_map)
+    a_game.play()

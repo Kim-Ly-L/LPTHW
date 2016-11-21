@@ -34,7 +34,7 @@ class Hemnes(Bookcase):
 # Make an instance of the classes
 gen = Bookcase(50, 100)
 bil = Billy(80, 120)
-hem =Hemnes(200, 180)
+hem = Hemnes(200, 180)
 
 # Call one of the functions (methods) inside the instance
 print hem.prettyprint()
