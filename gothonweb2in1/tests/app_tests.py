@@ -20,6 +20,10 @@ def test_index():
 
 def test_path_1():
     # Go one path through the game
+    testdata = {'userinput': 'Gothons Of Planet Percal #25'}
+    resp = client.post('/game', data=testdata)
+    assert_response(resp, contains="Gothons Of Planet Percal")
+
     testdata = {'userinput': 'yes'}
     resp = client.post('/game', data=testdata)
     assert_response(resp, contains="Central Corridor")
@@ -72,7 +76,7 @@ def test_path_1():
 
 #def test_func1():
 #    global client
-#    commands = [('tell a joke', "Laser Weapon Armory"), ('132', "The Bridge"), ('slowly place the bomb', "Escape Pod"), ('2', "You Made it!")]
+#    commands = [('Gothons of Planet Percal #25', "Gothons of Planet Percal #25")('tell a joke', "Laser Weapon Armory"), ('132', "The Bridge"), ('slowly place the bomb', "Escape Pod"), ('2', "You Made it!")]
 #    test_game_path(client, commands)
 
 #def test_func2():

@@ -2,10 +2,13 @@ from nose.tools import *
 from map import *
 
 def test_gothon_game_map():
+    assert_equal(decision.go('Gothons of Planet Percal #25'), gothon)
+    assert_equal(decision.go('Save the Paris Agreement'), vision)
+
     assert_equal(gothon.go('yes'), central_corridor)
     assert_equal(gothon.go('begin'), central_corridor)
     assert_equal(gothon.go('ready'), central_corridor)
-    assert_equal(gothon.go('*'), gothon)    
+    assert_equal(gothon.go('*'), gothon)
 
     assert_equal(central_corridor.go('shoot!'), generic_death)
     assert_equal(central_corridor.go('dodge!'), generic_death)

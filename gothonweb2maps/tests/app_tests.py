@@ -21,23 +21,23 @@ def test_index():
 def test_path_1():
     # Go one path through the game
     testdata = {'userinput': 'yes'}
-    resp = client.post('/game', data=testdata)
+    resp = client.post('/game1', data=testdata)
     assert_response(resp, contains="Central Corridor")
 
     testdata = {'userinput': 'tell a joke'}
-    resp = client.post('/game', data=testdata)
+    resp = client.post('/game1', data=testdata)
     assert_response(resp, contains="Laser Weapon Armory")
 
     testdata = {'userinput': '132'}
-    resp = client.post('/game', data=testdata)
+    resp = client.post('/game1', data=testdata)
     assert_response(resp, contains="The Bridge")
 
     testdata = {'userinput': 'slowly place the bomb'}
-    resp = client.post('/game', data=testdata)
+    resp = client.post('/game1', data=testdata)
     assert_response(resp, contains="Escape Pod")
 
     testdata = {'userinput': '2'}
-    resp = client.post('/game', data=testdata)
+    resp = client.post('/game1', data=testdata)
     assert_response(resp, contains="You Made it!")
 
 # Apparently, I cannot run the function test_path_2() below since the nosetests gives me an error for l. 52.

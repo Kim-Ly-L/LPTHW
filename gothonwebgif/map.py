@@ -1,9 +1,11 @@
+import urllib
+
 class Scene(object):
-    def __init__(self, title, urlname, description, helping):
+    def __init__(self, title, urlname, description, imgurl):
         self.title = title
         self.urlname = urlname
         self.description = description
-        self.helping = helping
+        self.imgurl = imgurl
         self.paths = {}
 
     def go(self, direction):
@@ -21,11 +23,7 @@ gothon = Scene("Gothons Of Planet Percal #25", "gothon",
 """
 Welcome to this amazing Adventure.
 Are You ready to begin the Journey?
-""",
-"""
-Answer with yes or no.
-"""
-)
+""", imgurl=urllib.urlopen('http://giphy.com/gifs/ufo-spaceship-abduction-3o85xuG8NPw9Okvquc'))
 
 central_corridor = Scene("Central Corridor", "central_corridor",
 """
@@ -37,13 +35,7 @@ put it in the bridge, and blow up the ship after getting into an escape pod.
 You're now running down the central corridor to the Weapons Armory when a
 Gothon hops out in an evil clown costume filled with hate. He's blocking the door
 to the Armory and about to pull a weapon to blast you.
-""",
-"""
-Gothons are aggressive creatures. However, their weakness is their sense of
-humour. Researchers have found out that Gothons sympathize with people and
- creatures who make them laugh.
-"""
-)
+""", imgurl=urllib.urlopen('http://giphy.com/gifs/loop-tumblr-featured-10thPb0Ycbqfqo'))
 
 laser_weapon_armory = Scene("Laser Weapon Armory", "laser_weapon_armory",
 """
@@ -61,11 +53,7 @@ You stand up and run to the far side of the room and find the neutron bomb in it
 container. There's a keypad lock on the box and you need the code to get the bomb
 out. If you get the code wrong 10 times then the lock closes forever and you can't
 get the bomb. The code is 3 digits.
-""",
-"""
-You better find out the code. After all, you have 10 attempts!
-"""
-)
+""", imgurl=urllib.urlopen('http://giphy.com/gifs/season-17-the-simpsons-17x13-3o6MbdTboTFWOUsLkc'))
 
 the_bridge = Scene("The Bridge", "the_bridge",
 """
@@ -76,12 +64,7 @@ You burst into the Bridge with the bomb under your arm and surprise 5 Gothons
 who are trying to take control of the ship. Each of them has an uglier clown costume
 that the last. They don't pull their weapons out of fear that they will set off
 the bomb under your arm.
-""",
-"""
-Stay calm and remember your goal. You wanted to place the bomb, right?
- Be careful to do it slowly so the Gothons do not panic and shoot at you.
-"""
-)
+""", imgurl=urllib.urlopen('http://giphy.com/gifs/rap-eminem-dope-kwqq0OhgJWWR2'))
 
 escape_pod = Scene("Escape Pod", "escape_pod",
 """
@@ -95,11 +78,7 @@ You rush through the ship desperately trying to make it to the escape pod. It se
 like there's no Gothons around, so you run as fast as possible. Eventually you reach
 the room with the escape pods, and you now need to pick one to take. Some of them could
 be damaged, but you don't have time to look. There's 5 pods, which one do you take?
-""",
-"""
-Enter a number. Hint: Even numbers are regarded as lucky numbers.
-"""
-)
+""", imgurl=urllib.urlopen('http://giphy.com/gifs/comedy-bang-scott-aukerman-cbbtv-PBg4KWciMK6zu'))
 
 the_end_winner = Scene("You Made it!", "the_end_winner",
 """
@@ -107,27 +86,16 @@ You jump into pod 2 and hit the eject button. The pod flies out into space headi
 to the planet below. As you're heading down, you look back and see your ship implode
 and then explode like a supernova, taking down the Gothon ship at the same time.
 You made it! YOU WON! Good job!
-""",
-"""
-No help needed. You are a hero!
-"""
-)
+""", imgurl=urllib.urlopen('http://giphy.com/gifs/breaking-bad-bryan-cranston-i-won-xT0GqssRweIhlz209i'))
 
 the_end_loser = Scene("Game Over", "the_end_loser",
 """
 You jump into a random pod and hit the eject button. The pod escapes into space
 but there's a crack in the hull. Uh oh. The pod implodes and you with it.
-""",
-"""
-Bad luck, huh? Try again!
-"""
-)
+""", imgurl=urllib.urlopen('http://giphy.com/gifs/wip-short-loser-3oz8xD8KWiVO4obzby'))
 
 generic_death = Scene("Death...", "death", "I have a small puppy that's better at this.",
-"""
-No need to be desparate! My puppy also had to try a couple of times!
-"""
-)
+imgurl=urllib.urlopen('http://giphy.com/gifs/the-simpsons-2x10-3o6Mb5WxERQyuy7qJa'))
 
 # Define the action commands available in each scene
 escape_pod.add_paths({
@@ -171,4 +139,16 @@ SCENES = {
     the_end_loser.urlname : the_end_loser,
     generic_death.urlname : generic_death
 }
+
+#IMAGEURL = {
+#    gothon.imgurl : 'http://giphy.com/gifs/ufo-spaceship-abduction-3o85xuG8NPw9Okvquc',
+#    central_corridor.imgurl : 'http://giphy.com/gifs/loop-tumblr-featured-10thPb0Ycbqfqo',
+#    laser_weapon_armory.imgurl : 'http://giphy.com/gifs/season-17-the-simpsons-17x13-3o6MbdTboTFWOUsLkc',
+#    the_bridge.imgurl : 'http://giphy.com/gifs/rap-eminem-dope-kwqq0OhgJWWR2',
+#    escape_pod.imgurl : 'http://giphy.com/gifs/comedy-bang-scott-aukerman-cbbtv-PBg4KWciMK6zu',
+#    the_end_winner.imgurl : 'http://giphy.com/gifs/breaking-bad-bryan-cranston-i-won-xT0GqssRweIhlz209i',
+#    the_end_loser.imgurl : 'http://giphy.com/gifs/wip-short-loser-3oz8xD8KWiVO4obzby',
+#    generic_death.imgurl : 'http://giphy.com/gifs/the-simpsons-2x10-3o6Mb5WxERQyuy7qJa'
+#}
+
 START = gothon

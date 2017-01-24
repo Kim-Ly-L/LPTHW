@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block bodycontent %}
+{% if scene %}
+  <h1> {{ scene.title }} </h1>
+  <pre>{{ scene.description }}</pre>
+
+  {% if scene.urlname == "death" %}
+    <p class="center"><a href="/">Play Again?</a></p>
+  {% else %}
+    <p>
+      <form action="/game" method="POST">
+        What do you do? <input type="text" name="userinput"> <input type="SUBMIT">
+      </form>
+    </p>
+  <p class="center"><a href="javascript:alert('{{scene.helping}}');">Help!</a><p>
+  {% endif %}
+{% else %}
+  <p class="center"><a href="/">Start at the Beginning</a></p>
+{% endif %}
+{% endblock %}
